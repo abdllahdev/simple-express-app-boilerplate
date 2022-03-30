@@ -1,0 +1,16 @@
+# VScode settings
+.vscode
+
+# Node modules
+node_modules
+
+# Dotenv files
+.env.development
+.env.test
+.env.production
+
+# Logs
+logs
+
+# Code coverage
+coverage

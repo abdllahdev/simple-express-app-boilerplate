@@ -1,0 +1,19 @@
+{
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:jest/recommended",
+    "plugin:security/recommended",
+    "plugin:prettier/recommended",
+    "eslint:recommended"
+  ],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
