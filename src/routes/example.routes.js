@@ -1,14 +1,13 @@
 const router = require("express").Router();
 const { exampleController } = require("../controllers");
-const { catchValidationErrors } = require("../middlewares");
-const { exampleValidation } = require("../validations");
+const { validator } = require("../middlewares");
+const { exampleValidator } = require("../validators");
 
 router.get("/", exampleController.getAll);
 
 router.post(
   "/create",
-  exampleValidation.create,
-  catchValidationErrors,
+  validator(exampleValidator.create),
   exampleController.create
 );
 
@@ -16,8 +15,7 @@ router.get("/:id", exampleController.getById);
 
 router.put(
   "/:id",
-  exampleValidation.update,
-  catchValidationErrors,
+  validator(exampleValidator.update),
   exampleController.update
 );
 

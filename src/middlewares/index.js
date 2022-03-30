@@ -1,7 +1,7 @@
 const errorHandler = require("./errorHandler.middleware");
-const catchValidationErrors = require("./catchValidationErrors.middleware");
+const validator = require("./validator.middleware");
 
 module.exports = {
   errorHandler,
-  catchValidationErrors,
+  validator,
 };
