@@ -1,6 +1,4 @@
-const { DataTypes } = require("sequelize");
-
-module.exports = (db) => {
+const Example = (db, DataTypes) => {
   const attributes = {
     attr1: {
       type: DataTypes.STRING,
@@ -17,6 +15,7 @@ module.exports = (db) => {
     },
   };
   const options = {};
-  const Example = db.define("example", attributes, options);
-  return Example;
+  return db.define("example", attributes, options);
 };
+
+module.exports = Example;
