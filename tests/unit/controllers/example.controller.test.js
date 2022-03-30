@@ -1,5 +1,5 @@
 const app = require("../../../src/app");
-const { sequelize } = require("../../../src/helpers");
+const { db } = require("../../../src/helpers");
 const supertest = require("supertest");
 const httpStatus = require("http-status");
 
@@ -8,7 +8,7 @@ describe("Example controller", () => {
 
   // Before any tests run, clear the DB and run migrations with Sequelize sync()
   beforeAll(async () => {
-    await sequelize.sync({ force: true });
+    await db.sync({ force: true });
   });
 
   test("Create", async () => {
@@ -22,6 +22,6 @@ describe("Example controller", () => {
 
   // After all tests have finished, close the DB connection
   afterAll(async () => {
-    await sequelize.close();
+    await db.close();
   });
 });

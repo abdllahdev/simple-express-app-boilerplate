@@ -1,4 +1,4 @@
-const { sequelize } = require("../../../src/helpers");
+const { db } = require("../../../src/helpers");
 const { Example } = require("../../../src/models");
 
 describe("Example model", () => {
@@ -6,7 +6,7 @@ describe("Example model", () => {
 
   // Before any tests run, clear the DB and run migrations with Sequelize sync()
   beforeAll(async () => {
-    await sequelize.sync({ force: true });
+    await db.sync({ force: true });
   });
 
   test("attr1 is required", async () => {
@@ -36,6 +36,6 @@ describe("Example model", () => {
 
   // After all tests have finished, close the DB connection
   afterAll(async () => {
-    await sequelize.close();
+    await db.close();
   });
 });

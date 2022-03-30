@@ -23,7 +23,7 @@ connection.query(
 connection.destroy();
 
 // Connect to database
-const sequelize = new Sequelize(
+const db = new Sequelize(
   dbConfig.DATABASE,
   dbConfig.USERNAME,
   dbConfig.PASSWORD,
@@ -34,4 +34,4 @@ const sequelize = new Sequelize(
   }
 );
 
-module.exports = sequelize;
+module.exports = db;
